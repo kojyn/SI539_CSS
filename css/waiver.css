@@ -1,0 +1,143 @@
+.container img {
+    width: 100%;
+}
+.container figcaption {
+    text-align: center;
+    text-transform: capitalize;
+}
+figure {
+    min-width: 0;
+}
+.container {
+    display: grid;
+    width: 70%;
+    margin: auto;
+    max-width: 375px;
+    grid-template-columns: minmax(auto, 1fr);
+    grid-auto-rows: auto;
+}
+
+@keyframes fadeIn { 
+	0% {opacity: 0;}
+	100% {opacity: 1;} 
+}     
+.logo {
+    animation-name: fadeIn;
+    animation-duration: 10s;
+}
+
+@media screen and (min-width: 650px) {
+    .jump:focus {
+        top: 0;
+        z-index: 99;
+    }
+    .container {
+        margin: auto;
+        display: grid;
+        min-width: 95%;
+        background: url("../images/concrete_seamless.png");
+        grid-template-columns: 25% 25% 25%;
+        justify-content: space-around;
+    }
+    figure:nth-child(2n+1) {
+        grid-column: 1 /span 2;
+    }
+    figure:nth-child(2n) {    
+        grid-column: 2 / -1;
+
+    }
+}
+
+@media screen and (min-width: 750px){
+    .jump:focus {
+        top: 0;
+        z-index: 99;
+
+    }
+    .container {
+        margin: auto;
+
+        display: grid;
+        width: 95%;
+        background: url("../images/concrete_seamless.png");
+        grid-template-columns: 20% 20% 20% 20%;
+        justify-content: space-between;
+    }
+    figure:nth-child(2n+1) {
+        grid-column: 1 / span 2;
+    }
+    figure:nth-child(2n) {    
+        grid-column: 3 /5;
+    }
+    figure:last-child {
+        grid-column: 2 / 4;
+    }
+
+}
+
+@media screen and (min-width: 900px) {
+    .jump:focus {
+        top: 0;
+        z-index: 99;
+    }
+    .container {
+        position: relative;
+        display: flex;
+        width: 95%;
+        flex-flow: row wrap;
+        background: url("../images/concrete_seamless.png");
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    figure {
+        flex-basis: 20%;
+    }
+    figure:nth-child(2) {
+        order: 10;
+    }
+    figure:nth-child(4n) {    
+        flex-basis: 40%;
+        border: solid 10px;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .jump:focus {
+        top: 0;
+        z-index: 99;
+    }
+    .container {
+        display: grid;
+        width: 95%;
+        background: url("../images/concrete_seamless.png");
+        grid-template-columns: 50% 50%;
+        justify-items: center;
+        overflow: hidden;
+    }
+
+    figure {
+        margin-bottom: 20px;
+        width: 75%;
+    }
+    figure:nth-child(2n+1) {
+        grid-column: 1;
+        transform: rotate(-15deg);
+    }
+    figure:nth-child(2n) {    
+        grid-column: 2 /-1;
+        transform: rotate(15deg);
+    }
+    figure:last-child {
+        grid-column: 1 / span 2;
+        transform: rotate(0);
+    }
+    figure:nth-child(2) {
+        order: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .logo {
+      animation: none;
+    }
+}
